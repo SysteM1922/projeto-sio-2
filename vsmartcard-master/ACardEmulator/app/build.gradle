@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+task shadowJar(type: ShadowJar) {
+    configurations = [project.configurations.shadow]
+}
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn shadowJar
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId "com.vsmartcard.acardemulator"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 7
+        versionName "3.4"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "distribution"
+    productFlavors {
+        full {
+            dimension "distribution"
+        }
+        fdroid {
+            dimension "distribution"
+            applicationIdSuffix ".fdroid"
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/external/vJCRE/src'
+        main.java.exclude('pro/javacard/vre/VJCREProvider*')
+        main.java.exclude('visa/*')
+        main.java.srcDirs += 'src/main/external/jcardsim/src/main/java'
+        main.java.exclude('com/licel/jcardsim/smartcardio/*')
+        main.java.exclude('com/licel/jcardsim/remote/*')
+        main.java.exclude('com/licel/jcardsim/utils/APDUScriptTool*')
+        main.java.exclude('com/licel/jcardsim/io/JavaxSmartCardInterface*')
+        main.java.exclude('com/licel/jcardsim/io/CAD*')
+        main.java.exclude('javacard/framework/service/CardRemoteObject*')
+        main.java.exclude('javacard/framework/service/RMIService*')
+        main.java.exclude('com/licel/jcardsim/utils/JavaCardApiProcessor*')
+        main.java.exclude('com/licel/jcardsim/framework/service/*')
+        main.java.exclude('com/licel/jcardsim/samples/*')
+        main.java.exclude('com/licel/jcardsim/crypto/*')
+        main.java.srcDirs += 'src/main/external/GidsApplet/src'
+        main.java.exclude('com/mysmartlogon/gidsAppletTests/*')
+        main.java.srcDirs += 'src/main/external/IsoApplet/src'
+        main.java.srcDirs += 'src/main/external/PivApplet/src'
+        main.java.srcDirs += 'src/main/external/android-scio/src/main'
+        main.java.srcDirs += 'src/main/external/ykneo-openpgp/applet/src'
+        main.java.srcDirs += 'src/main/external/ykneo-oath/applet/src'
+    }
+    shadowJar {
+        relocate 'org.bouncycastle', 'com.vsmartcard.acardemulator.org.bouncycastle'
+    }
+}
+
+android.applicationVariants.all { variant ->
+    def appName
+    //Check if an applicationName property is supplied; if not use the name of the parent project.
+    if (project.hasProperty("applicationName")) {
+        appName = applicationName
+    } else {
+        appName = parent.name
+    }
+
+    variant.outputs.each { output ->
+        def newApkName
+        //If there's no ZipAlign task it means that our artifact will be unaligned and we need to mark it as such.
+        if (output.zipAlign) {
+            newApkName = "${appName}-${output.baseName}-${variant.versionName}.apk"
+        } else {
+            newApkName = "${appName}-${output.baseName}-${variant.versionName}-unaligned.apk"
+        }
+        output.outputFile = new File(output.outputFile.parent, newApkName)
+    }
+}
+
+dependencies {
+    shadow localGroovy()
+    shadow gradleApi()
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'org.bouncycastle:bcprov-jdk14:1.49'
+    fullCompile files('libs/sdk-v1.0.0.jar')
+}

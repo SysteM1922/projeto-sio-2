@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Smart Card Reader</string>
+
+    <string name="scheme_vpcd">vpcd</string>
+
+    <string name="hint_vpcd_port">VPCD Port</string>
+    <string name="hint_vpcd_hostname">VPCD Hostname</string>
+
+    <string name="vpcd_config_info">This app connects to the virtual smart card reader driver (VPCD) via the network. You need to install VPCD on your computer and configure the connection parameters here accordingly.</string>
+    <string-array name="strDelays">
+        <item>125 milliseconds</item>
+        <item>250 milliseconds</item>
+        <item>500 milliseconds</item>
+        <item>1 second</item>
+        <item>2 seconds</item>
+        <item>4 seconds</item>
+        <item>10 seconds</item>
+        <item>30 seconds</item>
+    </string-array>
+    <string-array name="intDelays">
+        <item>125</item>
+        <item>250</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>4000</item>
+        <item>10000</item>
+        <item>30000</item>
+    </string-array>
+    <string-array name="strTimeouts">
+        <item>125 milliseconds</item>
+        <item>250 milliseconds</item>
+        <item>500 milliseconds</item>
+        <item>1 second</item>
+        <item>2 seconds</item>
+        <item>3 seconds</item>
+        <item>4 seconds</item>
+        <item>10 seconds</item>
+        <item>30 seconds</item>
+    </string-array>
+    <string-array name="intTimeouts">
+        <item>125</item>
+        <item>250</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>10000</item>
+        <item>30000</item>
+    </string-array>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_copy">Copy Log</string>
+    <string name="action_delete">Clear Log</string>
+
+    <string name="title_activity_settings">Settings</string>
+    <string name="hint_vpcd_listen">Listen for connections</string>
+
+</resources>

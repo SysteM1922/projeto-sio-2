@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/app_name"
+    android:requireDeviceUnlock="false">
+
+    <aid-group android:description="@string/applet_openpgp" android:category="other">
+        <aid-filter android:name="@string/aid_openpgp"/>
+        <aid-filter android:name="@string/aid_partial_openpgp"/>
+    </aid-group>
+
+    <aid-group android:description="@string/applet_oath" android:category="other">
+        <aid-filter android:name="@string/aid_oath"/>
+    </aid-group>
+
+    <aid-group android:description="@string/applet_isoapplet" android:category="other">
+        <aid-filter android:name="@string/aid_isoapplet"/>
+    </aid-group>
+
+    <aid-group android:description="@string/applet_pivapplet" android:category="other">
+        <aid-filter android:name="@string/aid_pivapplet"/>
+        <aid-filter android:name="@string/aid_pivapplet_truncated1"/>
+        <aid-filter android:name="@string/aid_pivapplet_truncated2"/>
+        <aid-filter android:name="@string/aid_pivapplet_truncated3"/>
+        <aid-filter android:name="@string/aid_pivapplet_truncated4"/>
+    </aid-group>
+
+    <aid-group android:description="@string/applet_gidsapplet" android:category="other">
+        <aid-filter android:name="@string/aid_gidsapplet"/>
+        <aid-filter android:name="@string/aid_gidsapplet_truncated1"/>
+        <aid-filter android:name="@string/aid_gidsapplet_truncated2"/>
+    </aid-group>
+
+</host-apdu-service>

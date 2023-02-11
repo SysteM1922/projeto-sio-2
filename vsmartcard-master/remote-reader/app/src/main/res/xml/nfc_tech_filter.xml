@@ -1,0 +1,6 @@
+<resources>
+    <tech-list>
+        <!-- catches both, NfcA and NfcB -->
+        <tech>android.nfc.tech.IsoDep</tech>
+    </tech-list>
+</resources>

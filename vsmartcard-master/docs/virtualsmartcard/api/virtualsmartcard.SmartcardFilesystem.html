@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartcardFilesystem Module &#8212; vsmartcard 2021-04-28 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../../_static/chip.ico"/>
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+  
+  <a href="https://github.com/frankmorgner/vsmartcard"
+     class="visible-desktop hidden-xs"><img
+    id="gh-banner"
+    style="position: absolute; top: 50px; right: 0; border: 0;"
+    src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+    alt="Fork me on GitHub"></a>
+  <script>
+    // Adjust banner height.
+    $(function () {
+      var navHeight = $(".navbar .container").css("height");
+      $("#gh-banner").css("top", navHeight);
+    });
+  </script>
+
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          vsmartcard</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Virtual Smart Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../remote-reader/README.html">Remote Smart Card Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ACardEmulator/README.html">Android Smart Card Emulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TCardEmulator/README.html">Tizen Smart Card Emulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pcsc-relay/README.html">PC/SC Relay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ccid/README.html">USB CCID Emulator</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Creating a Virtual Smart Card</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">SmartcardFilesystem Module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="smartcardfilesystem-module">
+<h1>SmartcardFilesystem Module<a class="headerlink" href="#smartcardfilesystem-module" title="Permalink to this headline">¶</a></h1>
+<div class="graphviz"><img src="../../_images/inheritance-d912d6a2d21f50423c993bad12b1b608c4a5bb75.png" alt="Inheritance diagram of virtualsmartcard.SmartcardFilesystem" usemap="#inheritance498eda02c2" class="inheritance graphviz" /></div>
+<map id="inheritance498eda02c2" name="inheritance498eda02c2">
+<area shape="rect" id="node1" href="#virtualsmartcard.SmartcardFilesystem.DF" target="_top" title="Class for a dedicated file" alt="" coords="250,20,447,37"/>
+<area shape="rect" id="node4" href="#virtualsmartcard.SmartcardFilesystem.MF" target="_top" title="Class for a master file" alt="" coords="523,20,721,37"/>
+<area shape="rect" id="node2" href="#virtualsmartcard.SmartcardFilesystem.File" target="_top" title="Template class for a smartcard file." alt="" coords="11,37,211,53"/>
+<area shape="rect" id="node3" href="#virtualsmartcard.SmartcardFilesystem.EF" target="_top" title="Template class for an elementary file." alt="" coords="251,53,446,69"/>
+<area shape="rect" id="node6" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF" target="_top" title="Class for an elementary file with record structure." alt="" coords="490,53,754,69"/>
+<area shape="rect" id="node7" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF" target="_top" title="Class for an elementary file with transparent structure." alt="" coords="479,86,764,102"/>
+<area shape="rect" id="node5" href="#virtualsmartcard.SmartcardFilesystem.Record" target="_top" title="virtualsmartcard.SmartcardFilesystem.Record" alt="" coords="4,4,218,20"/>
+</map><span class="target" id="module-virtualsmartcard.SmartcardFilesystem"></span><dl class="py class">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">DF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filedescriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">56</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lifecycle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simpletlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bertlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#virtualsmartcard.SmartcardFilesystem.File" title="virtualsmartcard.SmartcardFilesystem.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">virtualsmartcard.SmartcardFilesystem.File</span></code></a></p>
+<p>Class for a dedicated file</p>
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.append">
+<code class="sig-name descname"><span class="pre">append</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends ‘file’ to the content of the DF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.appendrecord">
+<code class="sig-name descname"><span class="pre">appendrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.appendrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.bertlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bertlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.bertlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of BER-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.content">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">content</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of files of the DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>unknown</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.decrypt">
+<code class="sig-name descname"><span class="pre">decrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.dfname">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dfname</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.dfname" title="Permalink to this definition">¶</a></dt>
+<dd><p>string with up to 16 bytes. DF name,which can also be used as applicationidentifier.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.encrypt">
+<code class="sig-name descname"><span class="pre">encrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.erasebinary">
+<code class="sig-name descname"><span class="pre">erasebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.erasebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.fid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.fid" title="Permalink to this definition">¶</a></dt>
+<dd><p>file identifier</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.filedescriptor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">filedescriptor</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.filedescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>file descriptor byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.getMF">
+<code class="sig-name descname"><span class="pre">getMF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.getMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return MF of the card that contains this file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.getdata">
+<code class="sig-name descname"><span class="pre">getdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestedTL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.getdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string of either the file’s BER-TLV or the file’s SIMPLE-TLV
+coded data objects depending on the bool ‘isSimpleTlv’. ‘requestedTL’
+is a list of (tag, length)-tuples that specify which tags should be
+returned in what size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.getpath">
+<code class="sig-name descname"><span class="pre">getpath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.getpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path to this file beginning with the MF’s fid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.lifecycle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lifecycle</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.lifecycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>life cycle byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.parent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>parent DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.putdata">
+<code class="sig-name descname"><span class="pre">putdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtlvlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.putdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets either the file’s BER-TLV or the file’s SIMPLE-TLV coded data
+objects depending on the bool ‘isSimpleTlv’. ‘newtlvlist’ is a list of
+(tag, length, value)-tuples of new data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.readbinary">
+<code class="sig-name descname"><span class="pre">readbinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.readbinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.readrecord">
+<code class="sig-name descname"><span class="pre">readrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.readrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.remove">
+<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes ‘file’ from the content of the DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.select">
+<code class="sig-name descname"><span class="pre">select</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_current</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first file of the DF, that has the ‘attribute’ with the
+specified ‘value’. For partial DF name selection you must specify the
+first/last/next or previous occurence with ‘reference’ and the index of
+the current file ‘index_current’ (-1 for None).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.simpletlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">simpletlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.simpletlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of SIMPLE-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.updatebinary">
+<code class="sig-name descname"><span class="pre">updatebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.updatebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.updaterecord">
+<code class="sig-name descname"><span class="pre">updaterecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.updaterecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.writebinary">
+<code class="sig-name descname"><span class="pre">writebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.writebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.DF.writerecord">
+<code class="sig-name descname"><span class="pre">writerecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.DF.writerecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">EF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filedescriptor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lifecycle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simpletlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bertlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shortfid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#virtualsmartcard.SmartcardFilesystem.File" title="virtualsmartcard.SmartcardFilesystem.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">virtualsmartcard.SmartcardFilesystem.File</span></code></a></p>
+<p>Template class for an elementary file.</p>
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.appendrecord">
+<code class="sig-name descname"><span class="pre">appendrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.appendrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.bertlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bertlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.bertlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of BER-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.datacoding">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">datacoding</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.datacoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer. Data coding byte.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.decrypt">
+<code class="sig-name descname"><span class="pre">decrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.encrypt">
+<code class="sig-name descname"><span class="pre">encrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.erasebinary">
+<code class="sig-name descname"><span class="pre">erasebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.erasebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.fid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.fid" title="Permalink to this definition">¶</a></dt>
+<dd><p>file identifier</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.filedescriptor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">filedescriptor</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.filedescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>file descriptor byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.getMF">
+<code class="sig-name descname"><span class="pre">getMF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.getMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return MF of the card that contains this file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.getdata">
+<code class="sig-name descname"><span class="pre">getdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestedTL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.getdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string of either the file’s BER-TLV or the file’s SIMPLE-TLV
+coded data objects depending on the bool ‘isSimpleTlv’. ‘requestedTL’
+is a list of (tag, length)-tuples that specify which tags should be
+returned in what size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.getpath">
+<code class="sig-name descname"><span class="pre">getpath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.getpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path to this file beginning with the MF’s fid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.lifecycle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lifecycle</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.lifecycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>life cycle byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.parent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>parent DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.putdata">
+<code class="sig-name descname"><span class="pre">putdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtlvlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.putdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets either the file’s BER-TLV or the file’s SIMPLE-TLV coded data
+objects depending on the bool ‘isSimpleTlv’. ‘newtlvlist’ is a list of
+(tag, length, value)-tuples of new data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.readbinary">
+<code class="sig-name descname"><span class="pre">readbinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.readbinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.readrecord">
+<code class="sig-name descname"><span class="pre">readrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.readrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.select">
+<code class="sig-name descname"><span class="pre">select</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.shortfid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">shortfid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.shortfid" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer with 1&lt;=shortfid&lt;=30.Short EF identifier.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.simpletlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">simpletlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.simpletlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of SIMPLE-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.updatebinary">
+<code class="sig-name descname"><span class="pre">updatebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.updatebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.updaterecord">
+<code class="sig-name descname"><span class="pre">updaterecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.updaterecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.writebinary">
+<code class="sig-name descname"><span class="pre">writebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.writebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.EF.writerecord">
+<code class="sig-name descname"><span class="pre">writerecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.EF.writerecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="virtualsmartcard.SmartcardFilesystem.File">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">File</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filedescriptor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lifecycle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simpletlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bertlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SAM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_fci_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Template class for a smartcard file.</p>
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.appendrecord">
+<code class="sig-name descname"><span class="pre">appendrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.appendrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.bertlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bertlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.bertlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of BER-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.decrypt">
+<code class="sig-name descname"><span class="pre">decrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.encrypt">
+<code class="sig-name descname"><span class="pre">encrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.erasebinary">
+<code class="sig-name descname"><span class="pre">erasebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.erasebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.fid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.fid" title="Permalink to this definition">¶</a></dt>
+<dd><p>file identifier</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.filedescriptor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">filedescriptor</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.filedescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>file descriptor byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.getMF">
+<code class="sig-name descname"><span class="pre">getMF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.getMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return MF of the card that contains this file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.getdata">
+<code class="sig-name descname"><span class="pre">getdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestedTL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.getdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string of either the file’s BER-TLV or the file’s SIMPLE-TLV
+coded data objects depending on the bool ‘isSimpleTlv’. ‘requestedTL’
+is a list of (tag, length)-tuples that specify which tags should be
+returned in what size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.getpath">
+<code class="sig-name descname"><span class="pre">getpath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.getpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path to this file beginning with the MF’s fid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.lifecycle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lifecycle</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.lifecycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>life cycle byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.parent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>parent DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.putdata">
+<code class="sig-name descname"><span class="pre">putdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtlvlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.putdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets either the file’s BER-TLV or the file’s SIMPLE-TLV coded data
+objects depending on the bool ‘isSimpleTlv’. ‘newtlvlist’ is a list of
+(tag, length, value)-tuples of new data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.readbinary">
+<code class="sig-name descname"><span class="pre">readbinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.readbinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.readrecord">
+<code class="sig-name descname"><span class="pre">readrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.readrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.select">
+<code class="sig-name descname"><span class="pre">select</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.simpletlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">simpletlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.simpletlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of SIMPLE-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.updatebinary">
+<code class="sig-name descname"><span class="pre">updatebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.updatebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.updaterecord">
+<code class="sig-name descname"><span class="pre">updaterecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.updaterecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.writebinary">
+<code class="sig-name descname"><span class="pre">writebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.writebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.File.writerecord">
+<code class="sig-name descname"><span class="pre">writerecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.File.writerecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">MF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filedescriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">56</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lifecycle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simpletlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bertlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#virtualsmartcard.SmartcardFilesystem.DF" title="virtualsmartcard.SmartcardFilesystem.DF"><code class="xref py py-class docutils literal notranslate"><span class="pre">virtualsmartcard.SmartcardFilesystem.DF</span></code></a></p>
+<p>Class for a master file</p>
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF._selectFile">
+<code class="sig-name descname"><span class="pre">_selectFile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF._selectFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the file specified by ‘p1’ and ‘data’ from the select
+file command APDU.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.append">
+<code class="sig-name descname"><span class="pre">append</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends ‘file’ to the content of the DF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.appendRecord">
+<code class="sig-name descname"><span class="pre">appendRecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.appendRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xe2. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.appendrecord">
+<code class="sig-name descname"><span class="pre">appendrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.appendrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.bertlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bertlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.bertlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of BER-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.content">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">content</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of files of the DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.create">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">create</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a list of files according to the parameters of a
+create file command.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.createFile">
+<code class="sig-name descname"><span class="pre">createFile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.createFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xe0. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.current">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">current</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>the currently selected file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.currentDF">
+<code class="sig-name descname"><span class="pre">currentDF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.currentDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current DF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.currentEF">
+<code class="sig-name descname"><span class="pre">currentEF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.currentEF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current EF or None if not available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>unknown</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.dataObjectHandlingDecodeEncapsulated">
+<code class="sig-name descname"><span class="pre">dataObjectHandlingDecodeEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.dataObjectHandlingDecodeEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes ‘p1’, ‘p2’ and ‘data’ from a data object handling command (i.
+e. get/put data) with <em>odd</em> instruction code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the specified file, True if the following list regards
+SIMPLE-TLV data objects False otherwise and a list of
+(tag, length, value)-tuples.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.dataObjectHandlingDecodePlain">
+<code class="sig-name descname"><span class="pre">dataObjectHandlingDecodePlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.dataObjectHandlingDecodePlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes ‘p1’, ‘p2’ and ‘data’ from a data object handling command (i.
+e. get/put data) with <em>even</em> instruction code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the specified file, True if the following list regards
+SIMPLE-TLV data objects False otherwise and a list of
+(tag, length, value)-tuples.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.dataUnitsDecodeEncapsulated">
+<code class="sig-name descname"><span class="pre">dataUnitsDecodeEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.dataUnitsDecodeEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes ‘p1’, ‘p2’ and ‘data’ from a data unit command (i. e.
+read/write/update/search/erase binary) with <em>odd</em> instruction code.</p>
+<dl class="simple">
+<dt>:returns the specified TransparentStructureEF, a list of offsets and a</dt><dd><p>list of data strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.dataUnitsDecodePlain">
+<code class="sig-name descname"><span class="pre">dataUnitsDecodePlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.dataUnitsDecodePlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes ‘p1’, ‘p2’ and ‘data’ from a data unit command (i. e.
+read/write/update/search/erase binary) with <em>even</em> instruction code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the specified TransparentStructureEF, a list of offsets and a
+list of data strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.decrypt">
+<code class="sig-name descname"><span class="pre">decrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.deleteFile">
+<code class="sig-name descname"><span class="pre">deleteFile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.deleteFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xe4. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.dfname">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dfname</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.dfname" title="Permalink to this definition">¶</a></dt>
+<dd><p>string with up to 16 bytes. DF name,which can also be used as applicationidentifier.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.encodeFileControlParameter">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">encodeFileControlParameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.encodeFileControlParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string of TLV-coded file control information of ‘file’. Note:
+The result is not prepended with tag and length for neither TCP, FMD
+nor FCI template.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.encrypt">
+<code class="sig-name descname"><span class="pre">encrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.eraseBinaryEncapsulated">
+<code class="sig-name descname"><span class="pre">eraseBinaryEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.eraseBinaryEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0x0f. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.eraseBinaryPlain">
+<code class="sig-name descname"><span class="pre">eraseBinaryPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.eraseBinaryPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0x0e. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.eraseRecord">
+<code class="sig-name descname"><span class="pre">eraseRecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.eraseRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0x0c. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.erasebinary">
+<code class="sig-name descname"><span class="pre">erasebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.erasebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.fid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.fid" title="Permalink to this definition">¶</a></dt>
+<dd><p>file identifier</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.filedescriptor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">filedescriptor</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.filedescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>file descriptor byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.firstSFT">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">firstSFT</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.firstSFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>string of length 1. The firstsoftware function table from thehistorical bytes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.getDataEncapsulated">
+<code class="sig-name descname"><span class="pre">getDataEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.getDataEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xcb. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.getDataPlain">
+<code class="sig-name descname"><span class="pre">getDataPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.getDataPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xca. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.getMF">
+<code class="sig-name descname"><span class="pre">getMF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.getMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return MF of the card that contains this file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.getdata">
+<code class="sig-name descname"><span class="pre">getdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestedTL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.getdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string of either the file’s BER-TLV or the file’s SIMPLE-TLV
+coded data objects depending on the bool ‘isSimpleTlv’. ‘requestedTL’
+is a list of (tag, length)-tuples that specify which tags should be
+returned in what size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.getpath">
+<code class="sig-name descname"><span class="pre">getpath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.getpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path to this file beginning with the MF’s fid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.lifecycle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lifecycle</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.lifecycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>life cycle byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.makeFirstSoftwareFunctionTable">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">makeFirstSoftwareFunctionTable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DFSelectionByFullDFName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DFSelectionByPartialDFName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DFSelectionByPath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DFSelectionByFID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DFSelectionByApplication_implicite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ShortFIDSupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RecordNumberSupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RecordIdentifierSupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.makeFirstSoftwareFunctionTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a byte according to the first software function table from the
+historical bytes of the card capabilities.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.makeSecondSoftwareFunctionTable">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">makeSecondSoftwareFunctionTable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DCB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.makeSecondSoftwareFunctionTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>The second software function table from the historical bytes contains
+the data coding byte.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.named_dfs">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">named_dfs</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.named_dfs" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of DFs with dfname specified</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.parent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>parent DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.putDataEncapsulated">
+<code class="sig-name descname"><span class="pre">putDataEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.putDataEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xdb. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.putDataPlain">
+<code class="sig-name descname"><span class="pre">putDataPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.putDataPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xda. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.putdata">
+<code class="sig-name descname"><span class="pre">putdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtlvlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.putdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets either the file’s BER-TLV or the file’s SIMPLE-TLV coded data
+objects depending on the bool ‘isSimpleTlv’. ‘newtlvlist’ is a list of
+(tag, length, value)-tuples of new data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.readBinaryEncapsulated">
+<code class="sig-name descname"><span class="pre">readBinaryEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.readBinaryEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xb1. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.readBinaryPlain">
+<code class="sig-name descname"><span class="pre">readBinaryPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.readBinaryPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xb0. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.readRecordEncapsulated">
+<code class="sig-name descname"><span class="pre">readRecordEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.readRecordEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xb3. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.readRecordPlain">
+<code class="sig-name descname"><span class="pre">readRecordPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.readRecordPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xb2. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.readbinary">
+<code class="sig-name descname"><span class="pre">readbinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.readbinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.readrecord">
+<code class="sig-name descname"><span class="pre">readrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.readrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.recordHandlingDecode">
+<code class="sig-name descname"><span class="pre">recordHandlingDecode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.recordHandlingDecode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes ‘p1’ and ‘p2’ from a record handling command (i. e.
+read/write/update/append/search/erase record).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the specified RecordStructureEF, the number or identifier of
+the record and a reference, that specifies which record to select
+(i. e. the last 3 bits of ‘p1’).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.remove">
+<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes ‘file’ from the content of the DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.searchBinaryEncapsulated">
+<code class="sig-name descname"><span class="pre">searchBinaryEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.searchBinaryEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.searchBinaryPlain">
+<code class="sig-name descname"><span class="pre">searchBinaryPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.searchBinaryPlain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.secondSFT">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">secondSFT</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.secondSFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>string of length 1. The secondsoftware function table from thehistorical bytes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.select">
+<code class="sig-name descname"><span class="pre">select</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_current</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first file of the DF, that has the ‘attribute’ with the
+specified ‘value’. For partial DF name selection you must specify the
+first/last/next or previous occurence with ‘reference’ and the index of
+the current file ‘index_current’ (-1 for None).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.selectFile">
+<code class="sig-name descname"><span class="pre">selectFile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.selectFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xa4. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.simpletlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">simpletlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.simpletlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of SIMPLE-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.updateBinaryEncapsulated">
+<code class="sig-name descname"><span class="pre">updateBinaryEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.updateBinaryEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xd7. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.updateBinaryPlain">
+<code class="sig-name descname"><span class="pre">updateBinaryPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.updateBinaryPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xd6. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.updateRecordEncapsulated">
+<code class="sig-name descname"><span class="pre">updateRecordEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.updateRecordEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xdd. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.updateRecordPlain">
+<code class="sig-name descname"><span class="pre">updateRecordPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.updateRecordPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xdc. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.updatebinary">
+<code class="sig-name descname"><span class="pre">updatebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.updatebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.updaterecord">
+<code class="sig-name descname"><span class="pre">updaterecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.updaterecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.writeBinaryEncapsulated">
+<code class="sig-name descname"><span class="pre">writeBinaryEncapsulated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.writeBinaryEncapsulated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xd1. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string. Returns the status bytes as two
+byte long integer and the response data as binary string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.writeBinaryPlain">
+<code class="sig-name descname"><span class="pre">writeBinaryPlain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.writeBinaryPlain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xd0. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.writeRecord">
+<code class="sig-name descname"><span class="pre">writeRecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.writeRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for instruction 0xd2. Takes the parameter bytes ‘p1’, ‘p2’ as
+integers and ‘data’ as binary string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the status bytes as two byte long integer and the response
+data as binary string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.writebinary">
+<code class="sig-name descname"><span class="pre">writebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.writebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.MF.writerecord">
+<code class="sig-name descname"><span class="pre">writerecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.MF.writerecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="virtualsmartcard.SmartcardFilesystem.Record">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">Record</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.Record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.Record.data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.Record.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>string. The record’s data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.Record.identifier">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">identifier</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.Record.identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for a Record of an elementary of record structure</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">RecordStructureEF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filedescriptor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lifecycle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simpletlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bertlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shortfid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxrecordsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">65535</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">records</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#virtualsmartcard.SmartcardFilesystem.EF" title="virtualsmartcard.SmartcardFilesystem.EF"><code class="xref py py-class docutils literal notranslate"><span class="pre">virtualsmartcard.SmartcardFilesystem.EF</span></code></a></p>
+<p>Class for an elementary file with record structure.</p>
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.__getRecords">
+<code class="sig-name descname"><span class="pre">__getRecords</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.__getRecords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of records.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_id</strong> – The requested record’s number or identifier</p></li>
+<li><p><strong>reference</strong> – Specifies which record to select (usually the last 3
+bits of ‘p1’ of a record handling command)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.__getRecordsByIdentifier">
+<code class="sig-name descname"><span class="pre">__getRecordsByIdentifier</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.__getRecordsByIdentifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of records and sets the recordpointer to the first
+record, that matched. Is to be involved by __getRecords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The requested record’s identifier</p></li>
+<li><p><strong>reference</strong> – Specifies which record to select (usually the last 3
+bits of ‘p1’ of a record handling command)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.__getRecordsByNumber">
+<code class="sig-name descname"><span class="pre">__getRecordsByNumber</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.__getRecordsByNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of records. Is to be involved by __getRecords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number</strong> – The requested record’s number</p></li>
+<li><p><strong>reference</strong> – Specifies which record to select (usually the last 3
+bits of ‘p1’ of a record handling command)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.appendrecord">
+<code class="sig-name descname"><span class="pre">appendrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.appendrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends a new record to the file, initializing it with the given data
+string. Sets the recordpointer to the newly created record.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.bertlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bertlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.bertlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of BER-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.datacoding">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">datacoding</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.datacoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer. Data coding byte.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.decrypt">
+<code class="sig-name descname"><span class="pre">decrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.encrypt">
+<code class="sig-name descname"><span class="pre">encrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.erasebinary">
+<code class="sig-name descname"><span class="pre">erasebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.erasebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.eraserecord">
+<code class="sig-name descname"><span class="pre">eraserecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.eraserecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a record from the file. ‘num_id’ and ‘reference’ specify the
+record (see __getRecords).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.fid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.fid" title="Permalink to this definition">¶</a></dt>
+<dd><p>file identifier</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.filedescriptor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">filedescriptor</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.filedescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>file descriptor byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.getMF">
+<code class="sig-name descname"><span class="pre">getMF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.getMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return MF of the card that contains this file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.getdata">
+<code class="sig-name descname"><span class="pre">getdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestedTL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.getdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string of either the file’s BER-TLV or the file’s SIMPLE-TLV
+coded data objects depending on the bool ‘isSimpleTlv’. ‘requestedTL’
+is a list of (tag, length)-tuples that specify which tags should be
+returned in what size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.getpath">
+<code class="sig-name descname"><span class="pre">getpath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.getpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path to this file beginning with the MF’s fid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.hasFixedRecordSize">
+<code class="sig-name descname"><span class="pre">hasFixedRecordSize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.hasFixedRecordSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the records are of fixed size, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.hasSimpleTlv">
+<code class="sig-name descname"><span class="pre">hasSimpleTlv</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.hasSimpleTlv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the EF is of TLV structure, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.isCyclic">
+<code class="sig-name descname"><span class="pre">isCyclic</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.isCyclic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the EF is of cyclic structure, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.lifecycle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lifecycle</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.lifecycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>life cycle byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.maxrecordsize">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">maxrecordsize</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.maxrecordsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer. maximum length of a record’s data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.parent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>parent DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.putdata">
+<code class="sig-name descname"><span class="pre">putdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtlvlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.putdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets either the file’s BER-TLV or the file’s SIMPLE-TLV coded data
+objects depending on the bool ‘isSimpleTlv’. ‘newtlvlist’ is a list of
+(tag, length, value)-tuples of new data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.readbinary">
+<code class="sig-name descname"><span class="pre">readbinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.readbinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.readrecord">
+<code class="sig-name descname"><span class="pre">readrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.readrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a data string from the given ‘offset’. ‘num_id’ and ‘reference’
+specify the record (see __getRecords).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.recordpointer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">recordpointer</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.recordpointer" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer. Points to the current record (i. e. index of records).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.records">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">records</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.records" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of records (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.resetRecordPointer">
+<code class="sig-name descname"><span class="pre">resetRecordPointer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.resetRecordPointer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the record pointer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.select">
+<code class="sig-name descname"><span class="pre">select</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.shortfid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">shortfid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.shortfid" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer with 1&lt;=shortfid&lt;=30.Short EF identifier.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.simpletlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">simpletlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.simpletlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of SIMPLE-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.updatebinary">
+<code class="sig-name descname"><span class="pre">updatebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.updatebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.updaterecord">
+<code class="sig-name descname"><span class="pre">updaterecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.updaterecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>x.updaterecord(num_id, reference, offset, data) &lt;==&gt;
+x.writerecord(num_id, reference, offset, data, DCB[“ONETIMEWRITE”])</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.writebinary">
+<code class="sig-name descname"><span class="pre">writebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.writebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.RecordStructureEF.writerecord">
+<code class="sig-name descname"><span class="pre">writerecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.RecordStructureEF.writerecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes a data string to the ‘offset’ of a record using the given data
+coding byte.  ‘num_id’ and ‘reference’ specify the record (see
+__getRecords).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">TransparentStructureEF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filedescriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lifecycle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simpletlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bertlv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shortfid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#virtualsmartcard.SmartcardFilesystem.EF" title="virtualsmartcard.SmartcardFilesystem.EF"><code class="xref py py-class docutils literal notranslate"><span class="pre">virtualsmartcard.SmartcardFilesystem.EF</span></code></a></p>
+<p>Class for an elementary file with transparent structure.</p>
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.appendrecord">
+<code class="sig-name descname"><span class="pre">appendrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.appendrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.bertlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bertlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.bertlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of BER-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>string (encrypted). The file’s data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.datacoding">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">datacoding</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.datacoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer. Data coding byte.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.decrypt">
+<code class="sig-name descname"><span class="pre">decrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.encrypt">
+<code class="sig-name descname"><span class="pre">encrypt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.erasebinary">
+<code class="sig-name descname"><span class="pre">erasebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">erasefrom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eraseto</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.erasebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets (part of) the content of an EF to its logical erased state,
+sequentially starting from ‘erasefrom’ ending at ‘eraseto’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.fid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.fid" title="Permalink to this definition">¶</a></dt>
+<dd><p>file identifier</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.filedescriptor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">filedescriptor</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.filedescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>file descriptor byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.getMF">
+<code class="sig-name descname"><span class="pre">getMF</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.getMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return MF of the card that contains this file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.getdata">
+<code class="sig-name descname"><span class="pre">getdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestedTL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.getdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string of either the file’s BER-TLV or the file’s SIMPLE-TLV
+coded data objects depending on the bool ‘isSimpleTlv’. ‘requestedTL’
+is a list of (tag, length)-tuples that specify which tags should be
+returned in what size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.getpath">
+<code class="sig-name descname"><span class="pre">getpath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.getpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path to this file beginning with the MF’s fid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.lifecycle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lifecycle</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.lifecycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>life cycle byte</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.parent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>parent DF</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.putdata">
+<code class="sig-name descname"><span class="pre">putdata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isSimpleTlv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtlvlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.putdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets either the file’s BER-TLV or the file’s SIMPLE-TLV coded data
+objects depending on the bool ‘isSimpleTlv’. ‘newtlvlist’ is a list of
+(tag, length, value)-tuples of new data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.readbinary">
+<code class="sig-name descname"><span class="pre">readbinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.readbinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the string of decrypted data beginning at ‘offset’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.readrecord">
+<code class="sig-name descname"><span class="pre">readrecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.readrecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.select">
+<code class="sig-name descname"><span class="pre">select</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.shortfid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">shortfid</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.shortfid" title="Permalink to this definition">¶</a></dt>
+<dd><p>integer with 1&lt;=shortfid&lt;=30.Short EF identifier.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.simpletlv_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">simpletlv_data</span></code><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.simpletlv_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of (tag, length, value)-tuples of SIMPLE-TLV coded data objects (encrypted)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.updatebinary">
+<code class="sig-name descname"><span class="pre">updatebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datalist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.updatebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>x.updatebinary(offsets, datalist) &lt;==&gt;
+x.writebinary(offsets, datalist, DCB[“ONETIMEWRITE”])</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.updaterecord">
+<code class="sig-name descname"><span class="pre">updaterecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.updaterecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.writebinary">
+<code class="sig-name descname"><span class="pre">writebinary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datalist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.writebinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes pieces of data to the specified offsets honoring the given
+coding byte.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offsets</strong> – list of integers. Offsets.</p></li>
+<li><p><strong>datalist</strong> – list of strings. Data pieces.</p></li>
+<li><p><strong>datacoding</strong> – the data coding byte to use for writing</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.writerecord">
+<code class="sig-name descname"><span class="pre">writerecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argz</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.TransparentStructureEF.writerecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only a template, will raise an error.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="virtualsmartcard.SmartcardFilesystem.get_indexes">
+<code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">get_indexes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_current</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.get_indexes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all indexes of the list, which are specified by ‘reference’ and by
+the current index ‘index_current’ (-1 for no current item) in the correct
+order. I. e.:</p>
+<p>REF[“IDENTIFIER_FIRST”]: all indexes from first to the last item
+REF[“IDENTIFIER_LAST”]: all indexes from the last to first item
+REF[“IDENTIFIER_NEXT”]: all indexes from the next to the last item
+REF[“IDENTIFIER_PREVIOUS”]: all indexes from the previous to the first item</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="virtualsmartcard.SmartcardFilesystem.getfile_byrefdataobj">
+<code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">getfile_byrefdataobj</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refdataobjs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.getfile_byrefdataobj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of files according to the given list of reference data
+objects.</p>
+<p>param mf:          the MF
+param refdataobjs: a list of 3-tuples (tag, length, newvalue)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="virtualsmartcard.SmartcardFilesystem.isEqual">
+<code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">isEqual</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.isEqual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True, if all items are equal, otherwise False</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="virtualsmartcard.SmartcardFilesystem.make_property">
+<code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">make_property</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.make_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns a property to the calling object. This is used to decorate instance
+variables with docstrings.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="virtualsmartcard.SmartcardFilesystem.prettyprint_anything">
+<code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">prettyprint_anything</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thing</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.prettyprint_anything" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a recursively generated string representation of an object and its
+attributes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="virtualsmartcard.SmartcardFilesystem.walk">
+<code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">walk</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.walk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Walks a path of fids and returns the last file (EF or DF).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – DF, where to look for the first fid</p></li>
+<li><p><strong>path</strong> – a string of fids</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="virtualsmartcard.SmartcardFilesystem.write">
+<code class="sig-prename descclassname"><span class="pre">virtualsmartcard.SmartcardFilesystem.</span></code><code class="sig-name descname"><span class="pre">write</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newlist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#virtualsmartcard.SmartcardFilesystem.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the status bytes and the result of a write operation according to
+the given data coding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>old</strong> – string of old data</p></li>
+<li><p><strong>newlist</strong> – a list of new data string</p></li>
+<li><p><strong>offsets</strong> – a list of offsets, each for one new data strings</p></li>
+<li><p><strong>datacoding</strong> – DCB[“ONETIMEWRITE”] (replace) or DCB[“WRITEOR”]
+(logical or) or DCB[“WRITEAND”] (logical and) or
+DCB[“PROPRIETARY”] (logical xor)</p></li>
+<li><p><strong>maxsize</strong> – the maximum number of bytes in the result</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2009-2021 by Dominik Oepen and Frank Morgner.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

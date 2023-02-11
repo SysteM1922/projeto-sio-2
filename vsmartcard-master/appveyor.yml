@@ -1,0 +1,65 @@
+platform:
+ - x86
+ - x64
+
+os: Visual Studio 2019
+
+install:
+ - set PATH=PATH=C:\Python36;C:\Python36\\Scripts;C:\\cygwin\\bin;%PATH%
+
+ - date /T & time /T
+ - python --version
+
+ - ps: >-
+     If ($env:Platform -Match "x86") {
+       $env:MSBUILD_PLATFORM="x86"
+       $env:VCVARS_PLATFORM="x86"
+       $env:ARTIFACT="virtualsmartcard_win32"
+       $env:X64=""
+     } Else {
+       $env:MSBUILD_PLATFORM="x64"
+       $env:VCVARS_PLATFORM="amd64"
+       $env:ARTIFACT="virtualsmartcard_win64"
+       $env:X64="x64\"
+     }
+ - git submodule update --init --recursive
+ 
+ # BUGFIX: wdf directory was renamed to 00wdf, rename it back (see github.com/appveyor/ci/issues/414)
+ #- ps: ren 'C:\Program Files (x86)\Windows Kits\10\include\00wdf' 'wdf'
+
+
+ - ps: $current_path = Get-Location | select -ExpandProperty Path
+ - ps: $full_path = $current_path + "\swigwin-4.0.2.zip"
+ - ps: $folder_path = $current_path + "\swig_win"
+ - ps: (new-object net.webclient).DownloadFile("https://kumisystems.dl.sourceforge.net/project/swig/swigwin/swigwin-4.0.2/swigwin-4.0.2.zip", $full_path)
+ - ps: Expand-Archive -LiteralPath $full_path -DestinationPath $folder_path
+ - ps: $env:Path += ";"+$folder_path+"\swigwin-4.0.2"
+ - python -m pip install --upgrade pip
+ - pip install virtualenv
+ - pip install -U setuptools
+ - pip install pycryptodome
+ - pip install pbkdf2
+ - pip install Pillow
+ - pip install pyreadline
+ - pip install pyscard
+ - pip install pyinstaller
+
+ # set Visual Studio 2019 build environment
+ - call "%ProgramFiles(x86)%/Microsoft Visual Studio/2019/Community/VC/Auxiliary/Build/vcvarsall.bat" %VCVARS_PLATFORM%
+
+build_script:
+ - md %ARTIFACT%
+
+ - msbuild virtualsmartcard\win32\BixVReader.sln /p:Configuration=Release;Platform=%MSBUILD_PLATFORM%
+ - move    virtualsmartcard\win32\BixVReaderInstaller\bin\%X64%Release\BixVReaderInstaller.msi %ARTIFACT%
+ - move    virtualsmartcard\win32\%X64%Release\*.cer %ARTIFACT%
+
+ - cl /Ivirtualsmartcard\src\vpcd virtualsmartcard\src\vpcd-config\vpcd-config.c /NODEFAULTLIB:MSVCRTD  /NODEFAULTLIB:MSVCRT virtualsmartcard\src\vpcd-config\local-ip.c ws2_32.lib
+ - move    vpcd-config.exe %ARTIFACT%
+
+ - bash -c "cd virtualsmartcard && autoreconf -i && exec 0</dev/null ./configure --enable-libpcsclite HELP2MAN=/usr/bin/true"
+ - bash -c "make vicc -C virtualsmartcard/src/vpicc"
+ - pyinstaller --onefile virtualsmartcard\src\vpicc\vicc -i doc\_static\chip.ico --distpath %ARTIFACT%
+
+ - 7z a %ARTIFACT%.zip %ARTIFACT%
+ - appveyor PushArtifact %ARTIFACT%.zip

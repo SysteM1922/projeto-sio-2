@@ -1,0 +1,55 @@
+purpose     "@PACKAGE_SUMMARY@"
+description "Using an contact-less interface (currently OpenPICC or libnfc) @PACKAGE@ receives command APDUs which are forwared to an existing smart card via PC/SC. @PACKAGE@ sends the response APDU back to the contact-less interface."
+
+option "emulator"   e
+    "Contact-less emulator backend"
+    values="libnfc","vpcd","openpicc" default="libnfc"
+    enum
+    optional
+option "connector"  c
+    "Smart card connector backend"
+    values="pcsc","vicc" default="pcsc"
+    enum
+    optional
+option "foreground" f
+    "Stay in foreground"
+    flag on
+option "verbose"    v
+    "Use (several times) to be more verbose"
+    multiple
+    optional
+
+section "PC/SC connector"
+option "reader"     r
+    "Number of the PC/SC reader to use (-1 for autodetect)"
+    int default="-1"
+    optional
+
+section "Virtual Smart Card connector"
+option "vpcd-port"       p
+    "Port for communicating virtual smart card"
+    int default="35963"
+    optional
+option "vpcd-hostname"       n
+    "Hostname for connecting to virtual smart card"
+    string default="wait for an incoming connection"
+    optional
+
+section "Virtual Smart Card Reader emulator"
+option "vicc-port"       P
+    "Port to listen for virtual smart card reader"
+    int default="35963"
+    optional
+option "vicc-hostname"       N
+    "Hostname for connecting to virtual smart card reader"
+    string default="wait for an incoming connection"
+    optional
+option "vicc-atr"       A
+    "ATR"
+    string default="3B80800101"
+    optional
+
+text "
+Report bugs to @PACKAGE_BUGREPORT@
+
+Written by Frank Morgner and Dominik Oepen"

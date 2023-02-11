@@ -1,0 +1,99 @@
+language: C
+
+matrix:
+  include:
+    - compiler: clang
+    - compiler: gcc
+    - compiler: i686-w64-mingw32-gcc
+    - compiler: x86_64-w64-mingw32-gcc
+    - env: DO_COVERITY_SCAN=yes
+
+env:
+  global:
+    - PKG_CONFIG_PATH=/tmp/install/lib/pkgconfig
+    - PREFIX=/tmp/install
+    - PYTHONPATH=$PYTHONPATH:$PREFIX/lib/python2.7/site-packages/
+    - ac_cv_func_malloc_0_nonnull=yes
+    - ac_cv_func_realloc_0_nonnull=yes
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+    #   via the "travis encrypt" command using the project repo's public key
+    - secure: "M+eNZPASDoFdWZUeSyu4whvPKaOwd0AlCmGWKc7SRbQPD8x8Ao8y3+kr++YonsWBnDUqQSNg3v4uWsJOo2Q57qMQ+FYcNlEjrYpXXSRdH4BnYnTH1WfNnTce7N5Bln9wxE+khe7cZJcxy+gvd+YiutQvHjT+bTzrs2MtHD0Odlw="
+    - COVERITY_SCAN_BRANCH_PATTERN="(master|coverity.*)"
+    - COVERITY_SCAN_NOTIFICATION_EMAIL="frankmorgner@gmail.com"
+    - COVERITY_SCAN_BUILD_COMMAND="make -C $TRAVIS_BUILD_DIR/virtualsmartcard -C $TRAVIS_BUILD_DIR/ccid -C $TRAVIS_BUILD_DIR/pcsc-relay"
+    - COVERITY_SCAN_PROJECT_NAME="$TRAVIS_REPO_SLUG"
+    - SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
+
+sudo: false
+
+addons:
+  apt_packages:
+    - libpcsclite-dev
+    - libusb-dev
+    - xutils-dev
+    - gengetopt
+    - help2man
+    - swig
+    - python-dev
+    - binutils-mingw-w64
+    - gcc-mingw-w64
+    - python-crypto
+
+install:
+  - if [ "$CC" == i686-w64-mingw32-gcc -o "$CC" == x86_64-w64-mingw32-gcc ]; then
+      export HOST=${CC%%-gcc};
+    fi
+
+before_script:
+  # virtualsmartcard requires OpenPACE
+  - if [ -z "$HOST" ]; then
+      git clone https://github.com/frankmorgner/openpace;
+      cd openpace && autoreconf -vis;
+      ./configure --prefix=$PREFIX --enable-openssl-install --enable-python || cat config.log;
+      make install;
+    fi
+  # Configure virtualsmartcard
+  - cd $TRAVIS_BUILD_DIR/virtualsmartcard && autoreconf -vsi
+  - if [ -z "$HOST" ]; then
+      ./configure || cat config.log;
+    else
+      ./configure --host=$HOST --enable-libpcsclite || cat config.log;
+    fi
+  # pcsc-relay requires libnfc
+  - if [ -z "$HOST" ]; then
+      git clone https://github.com/nfc-tools/libnfc.git;
+      cd libnfc && autoreconf -vsi;
+      ./configure --prefix=$PREFIX || cat config.log;
+      make install;
+    fi
+  # Configure pcsc-relay
+  - cd $TRAVIS_BUILD_DIR/pcsc-relay && autoreconf -vsi
+  - if [ -z "$HOST" ]; then
+      ./configure || cat config.log;
+    else
+      ./configure --host=$HOST PCSC_CFLAGS="-I/usr/$HOST/include" PCSC_LIBS="-lwinscard" || cat config.log;
+    fi
+  # Configure ccid
+  - if [ $TRAVIS_OS_NAME == linux -a -z "$HOST" ]; then
+      cd $TRAVIS_BUILD_DIR/ccid && autoreconf -vsi;
+      ./configure || cat config.log;
+    fi
+  # Optionally try to upload to Coverity Scan
+  # On error (propably quota is exhausted), just continue
+  - if [ -n "${DO_COVERITY_SCAN}" ]; then curl -s 'https://scan.coverity.com/scripts/travisci_build_coverity_scan.sh' | bash || true; fi
+
+script:
+  - if [ -z "${DO_COVERITY_SCAN}" ]; then
+      make -C $TRAVIS_BUILD_DIR/pcsc-relay;
+      make -C $TRAVIS_BUILD_DIR/virtualsmartcard;
+    fi
+  - if [ -z "$HOST" -a -z "${DO_COVERITY_SCAN}" ]; then
+      cd $TRAVIS_BUILD_DIR/virtualsmartcard/src/vpicc && export PYTHONPATH=$PYTHONPATH:`pwd` && export LD_LIBRARY_PATH=$PREFIX/lib/ && python -m unittest discover -s virtualsmartcard.tests -p *_test.py -v;
+    fi
+  - if [ $TRAVIS_OS_NAME == linux -a -z "$HOST" -a -z "${DO_COVERITY_SCAN}" ]; then
+      make -C $TRAVIS_BUILD_DIR/ccid;
+    fi
+
+cache:
+  apt: true
+  ccache: true
